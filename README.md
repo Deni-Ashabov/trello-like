@@ -52,7 +52,7 @@ DATABASE_HOST=localhost
 DATABASE_PORT=3306
 DATABASE_USER=your_db_username
 DATABASE_PASSWORD=your_password
-DATABASE_NAME=trello
+DATABASE_NAME=trello_clone
 JWT_SECRET_KEY=your_jwt_secret_key
 ```
 
@@ -83,3 +83,13 @@ Swagger is used for documenting the API. After starting the application, you can
 ```bash
 http://localhost:3000/api
 ```
+
+## Guards
+
+Guards are used to protect resources by ensuring only the owners of the resources can modify or delete them. The following guards are implemented:
+  - **JwtAuthGuard**: Ensures the user is authenticated.
+  - **OwnershipGuard**: Ensures the user owns the resource they are trying to modify.
+
+## Validation
+
+Data validation is performed using class-validator and class-transformer. DTOs are used to define the structure and validation rules for incoming requests.
